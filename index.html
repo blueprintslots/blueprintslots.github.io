@@ -23,7 +23,6 @@
         Fingerprint2.get(function (components) {
 		var values = components.map(function (component) { return component.value })
 		var murmur = Fingerprint2.x64hash128(values.join(''), 31)
-		console.log(murmur) // an array of components: {key: ..., value: ...}
         })
     })
 	} else {
@@ -31,14 +30,15 @@
 			Fingerprint2.get(function (components) {
 				var values = components.map(function (component) { return component.value })
 				var murmur = Fingerprint2.x64hash128(values.join(''), 31)
-				console.log(murmur) // an array of components: {key: ..., value: ...}
 			})  
 		}, 500)
 	}
 
 	function iunderstand() {
-		Cookies.set('x', ' + murmur + ', { expires: 2 });
-		alert( murmur );
+		var useragent=navigator.userAgent;
+		var useragent = btoa(useragent);
+		console.log(useragent) // an array of components: {key: ..., value: ...}
+		Cookies.set('x', 'useragent', { expires: 3 });
 	}
 	</script>
 	
