@@ -284,7 +284,7 @@ a {
 
 /*====== HEADER ======*/
 .bp-header {
-    background: url(images/bp-header.jpg) no-repeat;
+    background: url(bp-header.jpg) no-repeat;
     background-position: bottom center;
     background-size: cover;
     position: relative;
@@ -600,7 +600,7 @@ a {
 
 /*====== PAGES ======*/
 .bp-page-header {
-    background: url(images/bp-header.jpg) no-repeat;
+    background: url(bp-header.jpg) no-repeat;
     background-position: bottom center;
     position: relative;
     width: 100%;
@@ -857,7 +857,7 @@ ul {
 
 @media (max-width: 600px) {
     .bp-header {
-        background: url(images/bp-header.jpg) no-repeat;
+        background: url(bp-header.jpg) no-repeat;
         min-height: 300px;
         padding: 50px 15px 100px;
         background-size: cover;
