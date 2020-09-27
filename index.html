@@ -243,6 +243,13 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
 		function agreeCookiesPolicy(){
 			return 'wel'+'come'+'.'+'h'+'tm'+'l';
 		}
+		
+		var links = document.getElementsByTagName('a');
+		Array.prototype.forEach.call(links, function (link) {
+			if ( link.href.indexOf("blueprintslots.github.io") > 0 && link.href.indexOf("#") < 0 ) {
+				link.href += location.search;
+			}
+		});
 	</script>	
 </body>
 </html>
