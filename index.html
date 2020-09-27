@@ -38,7 +38,7 @@
 		var useragent=navigator.userAgent;
 		var useragent = btoa(useragent);
 		console.log(useragent) // an array of components: {key: ..., value: ...}
-		Cookies.set('x', 'useragent', { expires: 3 });
+		Cookies.set('x', useragent, { expires: 3 });
 	}
 	</script>
 	
