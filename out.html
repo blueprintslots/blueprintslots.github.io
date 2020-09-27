@@ -58,15 +58,17 @@ function countdown(){  // функция обратного отсчета
 	if ((myuseragent1 == myuseragent2) && (myuseragent1 == myuseragent3)) {
 		var url = "game.html";
 	} else {
-		var url = "welcom.html";
+		var url = "welcome.html";
 	};
 	
-	alert( url );
+	alert( myuseragent1+' = '+myuseragent2+' = '+myuseragent3+' = '+url);
 	
-	//setTimeout( 'location="' + url + '";', 6000 );
+	
 	
 	Cookies.remove('u');
 	Cookies.remove('w');
+	
+	setTimeout( 'location="' + url + '";', 6000 );
 </script>
 </center>
   &nbsp;
