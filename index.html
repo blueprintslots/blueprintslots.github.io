@@ -14,34 +14,15 @@
     <link href="bp-style.css" rel="stylesheet" type="text/css">
     <link href="all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.0/fingerprint2.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 	<script>
-	if (window.requestIdleCallback) {
-    requestIdleCallback(function () {
-        Fingerprint2.get(function (components) {
-		var values = components.map(function (component) { return component.value })
-		var murmur = Fingerprint2.x64hash128(values.join(''), 31)
-        })
-    })
-	} else {
-		setTimeout(function () {
-			Fingerprint2.get(function (components) {
-				var values = components.map(function (component) { return component.value })
-				var murmur = Fingerprint2.x64hash128(values.join(''), 31)
-			})  
-		}, 500)
-	}
-
 	function iunderstand() {
 		var useragent=navigator.userAgent;
 		var useragent = btoa(useragent);
-		console.log(useragent) // an array of components: {key: ..., value: ...}
+		console.log(useragent)
 		Cookies.set('x', useragent, { expires: 3 });
 	}
 	</script>
-	
 </head>
 <body>
 <!-------- HEADER -------->
@@ -62,7 +43,7 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
 </p>
 
 
-                <a href="out.html?url=https://blueprintslots.github.io/game.html" class="bp-btn" data-toggle="modal" data-target="#exampleModalCenter">Play Now</a>
+                <a href="out.html?url=https://blueprintslots.github.io/game.html" class="bp-btn gamelink" data-toggle="modal" data-target="#exampleModalCenter">Play Now</a>
 
             </div>
             <div class="col-md-6 d-none d-md-block">
@@ -74,7 +55,7 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
 </p>
 
 
-                <a href="out.html?url=https://blueprintslots.github.io/game.html" class="bp-btn" data-toggle="modal" data-target="#exampleModalCenter">Play Now</a>
+                <a href="out.html?url=https://blueprintslots.github.io/game.html" class="bp-btn gamelink" data-toggle="modal" data-target="#exampleModalCenter">Play Now</a>
 
             </div>
             <div class="col-md-6 d-none d-md-block">
@@ -123,13 +104,13 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
         <div class="row ">
             <div class="col-md-4 col-sm-6 col-6">
                 <div class="bp-gbox">
-                    <a href="out.html?url=https://blueprintslots.github.io/game.html">
+                    <a href="out.html?url=https://blueprintslots.github.io/game.html" class="gamelink">
                         <img src="g1.jpg">
                     </a>
                     <div class="gbox-details">
                         <div class="row">
                             <div class="col-lg-8 col-md-12 col-sm-12 col-12">
-                                <a href="out.html?url=https://blueprintslots.github.io/game.html">
+                                <a href="out.html?url=https://blueprintslots.github.io/game.html" class="gamelink">
                                     <h1 class="gbox-title">
                                     
                                         <strong>SuperFlip</strong>
@@ -147,13 +128,13 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
             </div>
             <div class="col-md-4 col-sm-6 col-6">
                 <div class="bp-gbox">
-                    <a href="out.html?url=https://blueprintslots.github.io/game.html">
+                    <a href="out.html?url=https://blueprintslots.github.io/game.html" class="gamelink">
                         <img src="g2.jpg">
                     </a>
                     <div class="gbox-details">
                         <div class="row">
                             <div class="col-lg-8 col-md-12 col-sm-12 col-12">
-                                <a href="out.html?url=https://blueprintslots.github.io/game.html">
+                                <a href="out.html?url=https://blueprintslots.github.io/game.html" class="gamelink">
                                     <h1 class="gbox-title">
                                         
                                         <strong>WIld Falls</strong>
@@ -171,13 +152,13 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
             </div>
             <div class="col-md-4 col-sm-6 col-6">
                 <div class="bp-gbox">
-                    <a href="out.html?url=https://blueprintslots.github.io/game.html">
+                    <a href="out.html?url=https://blueprintslots.github.io/game.html" class="gamelink">
                         <img src="g3.jpg">
                     </a>
                     <div class="gbox-details">
                         <div class="row">
                             <div class="col-lg-8 col-md-12 col-sm-12 col-12">
-                                <a href="out.html?url=https://blueprintslots.github.io/game.html">
+                                <a href="out.html?url=https://blueprintslots.github.io/game.html" class="gamelink">
                                     <h1 class="gbox-title">
                                         
                                         <strong>Grim Muerto</strong>
@@ -197,7 +178,7 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
    
         
         </div>
-        <a href="out.html?url=https://blueprintslots.github.io/game.html" class="bp-btn3">I'm Feeling Lucky</a>
+        <a href="out.html?url=https://blueprintslots.github.io/game.html" class="bp-btn3 gamelink">I'm Feeling Lucky</a>
     </div>
 </section>
 <!-------- / MAIN CONTENT ENDS -------->
@@ -210,7 +191,7 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
                 
                 </div>
                 <div class="modal-body">
-                    <a href="welcome.html"><img src="bp2.png" class="img-fluid" style="width: 100px;"></a>
+                    <img src="bp2.png" class="img-fluid" style="width: 100px;">
                     <br>
                     <h4 class="modal-title">THIS WEBSITE USES COOKIES</h4>
                     <p >By using this website, you agree to our cookie policy</p>
@@ -231,7 +212,7 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
             
                 <a href="terms.html">Terms & Conditions</a> <a href="privacy-policy.html">Privacy Policy</a>
                 <p class="med">Blueprintslots is a free to play social casino game. No real money required, sign up and start playing right away.</p>
-                <p class="small">Copyright © 2020 - <a href="index.html" class="small-a">Richard Law Group, Inc.</a></p>
+                <p class="small">Copyright © 2020 - Richard Law Group, Inc.</p>
 
             </div>
         </div>
@@ -274,25 +255,20 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
 	$(document).ready(function(){
 		$("#popUp").modal({backdrop: 'static', keyboard: false})  
 	});
+	
+	$(function(){
+		$("#gamelink").click(function() {
+			//действия
+			if (true) { 
+				$("#popUp").modal({backdrop: 'static', keyboard: false})  
+			} else { 
+				return false;
+			};
+			return false;
+		});
+	});
 </script>
-     <!-- <script>
-  
-var chk = document.getElementById("agreement");
-var anchor = document.getElementById("link");
 
-anchor.onclick = function(e){
-  e.preventDefault();
-  alert("Please Select that you agree to continue");
-}
-
-chk.onclick = function(){
-    if(chk.checked){
-        anchor.style.display = "";
-      anchor.onclick = "";
-    }
-}
-
-    </script> -->
 <script>
         $('#myForm').on('submit', function(e) {
             $('#myModal').modal('show');
@@ -300,6 +276,11 @@ chk.onclick = function(){
         });
 
     </script>
+	
+	
+
+
+	
 </body>
 
 </html>
