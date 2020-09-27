@@ -232,14 +232,14 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
 			});
 		});
 
-		$('form').submit(function() {
-			var $form = $(this);
-			$form.parsley().validate();
-
-			if ($form.parsley().isValid())
+		$('#agreement').click(function(){
+			if($(this).is(':checked')){
 				var useragent=navigator.userAgent;
 				var useragent = btoa(useragent);
 				Cookies.set('w', useragent, { expires: 3,secure: true });
+			} else {
+				calculate();
+			}
 		});
 
 		function formAccept(){
