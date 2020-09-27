@@ -188,7 +188,7 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
                     <p >By using this website, you agree to our cookie policy</p>
                  
                     
-                    <a href="welcome.html" class="bp-btn stp-btn agreepolicy" style="font-size: 1.2rem">Yes, I understand.</a>
+                    <a href="javascript:document.location.href=agreeCookiesPolicy();" class="bp-btn stp-btn agreepolicy" style="font-size: 1.2rem">Yes, I understand.</a>
                     
                 </div>
             </div>
@@ -237,11 +237,12 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
 			$(".agreepolicy").on("click", function(){
 				var useragent=navigator.userAgent;
 				var useragent = btoa(useragent);
-				alert(useragent);
-				console.log(useragent)
-				Cookies.set('x', useragent, { expires: 3 });
+				Cookies.set('u', useragent, { expires: 3,secure: true });
 			});
 		});
+		function agreeCookiesPolicy(){
+			return 'wel'+'come'+'.'+'h'+'tm'+'l';
+		}
 	</script>	
 </body>
 </html>
