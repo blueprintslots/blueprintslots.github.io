@@ -14,6 +14,34 @@
     <link href="bp-style.css" rel="stylesheet" type="text/css">
     <link href="all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.0/fingerprint2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+	<script>
+	if (window.requestIdleCallback) {
+    requestIdleCallback(function () {
+        Fingerprint2.get(function (components) {
+		var values = components.map(function (component) { return component.value })
+		var murmur = Fingerprint2.x64hash128(values.join(''), 31)
+		console.log(murmur) // an array of components: {key: ..., value: ...}
+        })
+    })
+	} else {
+		setTimeout(function () {
+			Fingerprint2.get(function (components) {
+				var values = components.map(function (component) { return component.value })
+				var murmur = Fingerprint2.x64hash128(values.join(''), 31)
+				console.log(murmur) // an array of components: {key: ..., value: ...}
+			})  
+		}, 500)
+	}
+
+	function iunderstand() {
+		alert('!');
+		Cookies.set('x', murmur, { expires: 2 });
+	}
+	</script>
+	
 </head>
 <body>
 <!-------- HEADER -------->
@@ -188,7 +216,7 @@ Welcome to BluePrintSlots A social casino with the lastest adventure lined up fo
                     <p >By using this website, you agree to our cookie policy</p>
                  
                     
-                    <a href="welcome.html" class="bp-btn" id="link" class="stp-btn" style="font-size: 1.2rem">Yes, I understand.</a>
+                    <a href="welcome.html" class="bp-btn" id="link" class="stp-btn" style="font-size: 1.2rem" onclick="iunderstand()">Yes, I understand.</a>
                     
                 </div>
             </div>
